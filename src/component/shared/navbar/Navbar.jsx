@@ -14,11 +14,11 @@ const Navbar = () => {
           <Link>Login</Link>
         </li>
         <li>
-          <Link>Register</Link>
+          <Link to="/register">Register</Link>
         </li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">jas autozone</a>
+    <a className="btn btn-ghost normal-case text-xl">jas</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link>Login</Link>
         </li>
         <li>
-          <Link>Register</Link>
+          <Link to="/register">Register</Link>
         </li>
     </ul>
   </div>
