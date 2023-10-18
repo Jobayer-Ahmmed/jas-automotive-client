@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-
+import { Link, NavLink } from "react-router-dom"
+import logo from "../../../assets/logo/jas_logo.png"
 
 const Navbar = () => {
   return (
@@ -11,25 +11,40 @@ const Navbar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <Link>Login</Link>
+          <NavLink to="/add-product">Add Product</NavLink>
+        </li>
+        <li>
+          <NavLink to="/my-cart">My Cart</NavLink>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
         </li>
         <li>
           <Link to="/register">Register</Link>
         </li>
-      </ul>
+    </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">jas</a>
+    {/* for logo */}
+    <div>
+      <span className="text-2xl font-bold"><img src={logo} className="inline w-20" />  jas </span>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <Link>Login</Link>
+          <NavLink to="/add-product">Add Product</NavLink>
+        </li>
+        <li>
+          <NavLink to="/my-cart">My Cart</NavLink>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
         </li>
         <li>
           <Link to="/register">Register</Link>
