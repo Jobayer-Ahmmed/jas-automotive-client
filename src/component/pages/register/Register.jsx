@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { MyContext } from "../../contextApi/MyAuthProvider"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import URL from "../../../url/URL";
 
 const Register = () => {
     const {createMyUser} = useContext(MyContext)
@@ -17,7 +17,7 @@ const Register = () => {
 
         createMyUser(email, password)
             .then(()=>{
-                fetch("https://assignment-10-server-bh3b3ss9p-jobayers-projects.vercel.app/user",{
+                fetch(`${URL}/user`,{
                     method:"POST",
                     headers:{"content-type" : "application/json"},
                     body:JSON.stringify(data)

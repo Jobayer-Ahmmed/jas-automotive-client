@@ -9,10 +9,13 @@ export default {
       colors: {
         clifford: '#da373d',
         deepGray:"#252523",
+        textColor:"#d6d0c1",
   
       },
       spacing: {
-        xPadding: "60px"
+        xPadding: "60px",
+        myMargin: "70px",
+        mtMargin: "30px",
       },
 
       fontFamily: {
