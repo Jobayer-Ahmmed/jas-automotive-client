@@ -17,7 +17,7 @@ const Brands = () => {
 
     
   return (
-    <div className="flex justify-center px-xPadding my-myMargin">
+    <div className="flex justify-between px-xPadding my-myMargin">
         <div>
             <h1 className="text-textColor text-3xl font-bold text-center mb-mtMargin">
                 The Most Popular Automotive Brands
