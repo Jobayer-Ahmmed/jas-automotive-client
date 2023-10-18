@@ -17,7 +17,7 @@ const Register = () => {
 
         createMyUser(email, password)
             .then(()=>{
-                fetch("https://coffee-store-server-awbb5tc47-jobayers-projects.vercel.app/user",{
+                fetch("https://assignment-10-server-bh3b3ss9p-jobayers-projects.vercel.app/user",{
                     method:"POST",
                     headers:{"content-type" : "application/json"},
                     body:JSON.stringify(data)

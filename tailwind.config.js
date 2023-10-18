@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         clifford: '#da373d',
+        deepGray:"#252523",
   
       },
       spacing: {
