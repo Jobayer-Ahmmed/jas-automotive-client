@@ -2,37 +2,41 @@ import { useContext } from "react"
 import { MyContext } from "../../contextApi/MyAuthProvider"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import URL from "../../../url/URL";
+import myAuth from "../../../firebase/firebase.config";
+import { updateProfile } from "firebase/auth";
+import { Link } from "react-router-dom";
+
 
 const Register = () => {
     const {createMyUser} = useContext(MyContext)
+
     const handleRegsiter = e=>{
         e.preventDefault()
         const forFormReset = e.target
         const form  = new FormData(e.currentTarget)
         const email =form.get("email")
         const password = form.get("password")
+        const name = form.get("name")
+        const photo = form.get("photo")
         console.log(email, password)
-        const data = {email, password}
 
         createMyUser(email, password)
-            .then(()=>{
-                fetch(`${URL}/user`,{
-                    method:"POST",
-                    headers:{"content-type" : "application/json"},
-                    body:JSON.stringify(data)
+        .then((res1)=>{
+            updateProfile(myAuth.currentUser, {
+                displayName: name, 
+                photoURL: photo
                 })
-                 .then((res2)=>res2.json())
-                 .then(data=>{
-                    console.log(data)
-                    toast.success("Regsitration successfull")
-                 })
-            })
+            .then((res2) => {
+                console.log(res1)
+                console.log(res2)
+                toast.success("Congratulations! Registration successfull")
+                forFormReset.reset()
+              })
             .catch(err=>console.log(err))
+        })
+        .catch(err=>console.log(err))
 
-        forFormReset.reset()
-        
-    }
+}
   return (
     <div className=" lg:w-3/5 mx-auto my-myMargin">
         <div className="bg-textColor p-10 rounded-lg text-center">
@@ -44,6 +48,8 @@ const Register = () => {
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="URL of Your Photo" name="photo" required/><br/>
                 <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Add" />
             </form>
+            <p  className=" my-mtMargin">Already have an account? <Link to="/login" className="underline text-green-600">Login Now!</Link></p>
+
         </div>
 
 
