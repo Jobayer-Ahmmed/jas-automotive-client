@@ -5,14 +5,13 @@ import { MyContext } from "../../contextApi/MyAuthProvider";
 
 const Navbar = () => {
   const { myUser, myLogOut } = useContext(MyContext);
-  console.log("from navbar : ", myUser);
   const handleLogout = () => {
     myLogOut()
       .then(() => console.log("Logout successful"))
       .catch((err) => console.log(err.message));
   };
   return (
-    <div className="navbar bg-base-100 px-5 md:px-20">
+    <div className="navbar bg-base-100 px-xPadding2 md:px-xPadding">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

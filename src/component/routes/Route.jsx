@@ -4,6 +4,9 @@ import Home from "../pages/home/Home";
 import Register from "../pages/register/Register";
 import AddProduct from "../pages/addProduct/AddProduct";
 import Login from "../pages/home/login/Login";
+import PrivateRoute from "./PrivateRoute";
+import MyCarts from "../pages/myCart/MyCarts";
+import URL from "../../url/URL";
 
 
 const routes = createBrowserRouter([
@@ -26,7 +29,12 @@ const routes = createBrowserRouter([
             },
             {
                 path:"/add-product",
-                element:<AddProduct/>
+                element:<PrivateRoute><AddProduct/></PrivateRoute>
+            },
+            {
+                path:"/my-cart",
+                element:<MyCarts/>,
+                loader:async ()=> fetch(`${URL}/car`)
             }
         ]
     }

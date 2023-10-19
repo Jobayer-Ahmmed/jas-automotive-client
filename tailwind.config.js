@@ -15,6 +15,7 @@ export default {
       },
       spacing: {
         xPadding: "60px",
+        xPadding2: "20px",
         myMargin: "80px",
         mtMargin: "30px",
       },
