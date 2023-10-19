@@ -22,7 +22,7 @@ const AddProduct = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            console.log("I have responed : ",data)
             forFromReset.reset()
         })
     }
@@ -36,11 +36,11 @@ const AddProduct = () => {
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Car Name or, Car Model" name="name" required/><br />
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Photo URL of the Car" name="photo" required /> <br />
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Brand Name" name="brand" required/> <br />
-                <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Car Type" name="type"/><br/>
+                <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Car Type" name="type" required/><br/>
                 <textarea  className="w-4/5 pl-5 pt-2 rounded" rows="4" placeholder="Simply Describe About the Car" name="description" required></textarea> <br />
-                <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Car Rating" name="rating" /><br />
+                <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Car Rating" name="rating" required /><br />
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Price" name="price" required /> <br />
-                <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor" type="submit" value="Add" />
+                <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Add" />
             </form>
         </div>
     </div>

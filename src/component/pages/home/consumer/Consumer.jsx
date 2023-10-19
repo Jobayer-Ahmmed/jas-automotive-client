@@ -20,7 +20,7 @@ const Consumer = () => {
                 <Link to=""  className="mt-2">Find your dreaming car</Link>
             </div>
             <div className="bg-deepGray md:w-2 md:h-40 md:mx-5 w-40 h-[2px] my-7"></div>
-            <div className="bg-deepGray w-[2px] h-[90%]"></div>
+            {/* <div className="bg-deepGray w-[2px] h-[90%]"></div> */}
             <div className=" w-full text-center">
                 <div className="text-4xl"><BsPeopleFill className="inline"/><FaSearch className="inline"/></div>
                 <Link to=""  className="mt-2">Find the car dealer</Link>

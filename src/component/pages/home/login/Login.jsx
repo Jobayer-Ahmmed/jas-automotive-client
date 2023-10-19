@@ -1,12 +1,12 @@
 import { useContext } from "react"
-import { MyContext } from "../../contextApi/MyAuthProvider"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import URL from "../../../url/URL";
+import URL from "../../../../url/URL";
+import { MyContext } from "../../../contextApi/MyAuthProvider";
 
-const Register = () => {
+const Login = () => {
     const {createMyUser} = useContext(MyContext)
-    const handleRegsiter = e=>{
+    const handleLogin = e=>{
         e.preventDefault()
         const forFormReset = e.target
         const form  = new FormData(e.currentTarget)
@@ -36,12 +36,10 @@ const Register = () => {
   return (
     <div className=" lg:w-3/5 mx-auto my-myMargin">
         <div className="bg-textColor p-10 rounded-lg text-center">
-            <h1  className=" text-2xl font-medium my-mtMargin">Registration Now</h1>
-            <form onSubmit={handleRegsiter}>
-                <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Name" name="name" required/><br />
+            <h1  className=" text-2xl font-medium my-mtMargin">Login Now</h1>
+            <form onSubmit={handleLogin}>
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Email" name="email" required /> <br />
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Password" name="password" required/> <br />
-                <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="URL of Your Photo" name="photo" required/><br/>
                 <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Add" />
             </form>
         </div>
@@ -63,4 +61,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Login
