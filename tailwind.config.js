@@ -10,6 +10,7 @@ export default {
         clifford: '#da373d',
         deepGray:"#252523",
         textColor:"#d6d0c1",
+        secondarTextColor:"#FDBCAE",
   
       },
       spacing: {
