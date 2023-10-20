@@ -1,12 +1,13 @@
 import Automotive from "./automotive/Automotive"
+import Banner from "./banner/Banner"
 import Brands from "./brands/Brands"
 import Consumer from "./consumer/Consumer"
-import Slider from "./slider/Slider"
+
 
 const Home = () => {
   return (
     <div>
-      <Slider/>
+      <Banner/>
       <Automotive/>
       <Brands/>
       <Consumer/>
