@@ -31,8 +31,8 @@ const AddProduct = () => {
 
 
   return (
-    <div className=" lg:w-3/5 mx-auto my-myMargin">
-        <div className="bg-textColor p-10 rounded-lg text-center">
+    <div className="w-4/5 md:w-3/5 mx-auto my-myMargin">
+        <div className="bg-textColor py-10 px-4 rounded-lg text-center">
             <h1  className=" text-2xl font-medium my-mtMargin">Add A Car</h1>
             <form onSubmit={handleSubmit}>
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Car Name or, Car Model" name="name" required/><br />

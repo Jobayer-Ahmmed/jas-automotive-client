@@ -3,7 +3,7 @@ import Root from "../layouts/Root";
 import Home from "../pages/home/Home";
 import Register from "../pages/register/Register";
 import AddProduct from "../pages/addProduct/AddProduct";
-import Login from "../pages/home/login/Login";
+import Login from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
 import MyCarts from "../pages/myCart/MyCarts";
 import URL from "../../url/URL";

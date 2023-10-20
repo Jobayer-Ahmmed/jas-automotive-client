@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { MyContext } from "../../../contextApi/MyAuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { MyContext } from "../../contextApi/MyAuthProvider";
 
 const Login = () => {
     const { myLogin} = useContext(MyContext)
@@ -26,8 +26,8 @@ const Login = () => {
     }
 
   return (
-    <div className=" lg:w-3/5 mx-auto my-myMargin">
-        <div className="bg-textColor p-10 rounded-lg text-center">
+    <div className="w-4/5 md:w-3/5 mx-auto my-myMargin">
+        <div className="bg-textColor py-10 px-4 rounded-lg text-center">
             <h1  className=" text-2xl font-medium my-mtMargin">Login Now</h1>
             <h3  className="text-red-500 text-xl my-mtMargin">{message}</h3>
             <form onSubmit={handleLogin}>

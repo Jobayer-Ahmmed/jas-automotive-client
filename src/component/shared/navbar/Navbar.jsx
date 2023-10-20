@@ -79,7 +79,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {myUser ? (
-          <div className="hidden lg:block ">
+          <div className="">
             <div className="dropdown dropdown-end">
               <label tabIndex={0}>
                       <img className="w-10 h-10 hover:w-11 hover:h-11 rounded-full" src={myUser.photoURL} alt="" />
