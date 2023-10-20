@@ -19,6 +19,31 @@ https://i.ibb.co/R9DT6zx/Toyota-Tundra.png
 https://i.ibb.co/vhJqR6c/toyota-venza.png
 https://i.ibb.co/G3Tvy8h/toyota-crown.png
 
+# frod
+https://i.ibb.co/dt3Gx5P/Ford-Bronco.png
+https://i.ibb.co/yWPw5sx/Ford-Mustang-Mach-E.png
+https://i.ibb.co/cxFhJjV/ford-f-150.png
+
+# BMW
+https://i.ibb.co/QNdttBr/BMW-iX.png
+https://i.ibb.co/ypJ0gcX/BMW-M3.png
+https://i.ibb.co/fSz4ZWy/BMW-Z4.png
+
+# Mercedes-Benz
+https://i.ibb.co/k6qVdxm/Mercedes-Benz-C-Class.png
+https://i.ibb.co/yVFFspc/Mercedes-Benz-S-Class.png
+https://i.ibb.co/xHtqqvL/Mercedes-Benz-SL.png
+
+# Tesla
+https://i.ibb.co/4fYncBC/Tesla-Model-3.png
+https://i.ibb.co/LtxJHff/Tesla-Model-S.png
+https://i.ibb.co/yVyqhNJ/Tesla-Model-Y.png
+
+# Honda
+https://i.ibb.co/WpMS6M7/Honda-Civic.png
+https://i.ibb.co/TY3GD4Z/Honda-CR-V.png
+https://i.ibb.co/mN0qcN7/Honda-Ridgeline.png
+
 # dummy image
 https://i.ibb.co/JyMcKzX/toyata-car1.png
 https://i.ibb.co/sVPmpTW/toyata-car4.png

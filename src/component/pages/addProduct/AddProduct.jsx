@@ -1,4 +1,6 @@
 import URL from "../../../url/URL"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
     const handleSubmit=e=>{
@@ -21,8 +23,8 @@ const AddProduct = () => {
             body:JSON.stringify(data)
         })
         .then(res=>res.json())
-        .then(data=>{
-            console.log("I have responed : ",data)
+        .then(()=>{
+            toast.success("Insert successfull")
             forFromReset.reset()
         })
     }
@@ -43,6 +45,20 @@ const AddProduct = () => {
                 <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Add" />
             </form>
         </div>
+
+        <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+        />
+
     </div>
   )
 }

@@ -41,6 +41,9 @@ const Navbar = () => {
               <NavLink to="/add-product">Add Product</NavLink>
             </li>
             <li>
+              <NavLink to="/see-all-car">See All Car</NavLink>
+            </li>
+            <li>
               <NavLink to="/my-cart">My Cart</NavLink>
             </li>
             <li>
@@ -65,6 +68,9 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink to="/add-product">Add Product</NavLink>
+          </li>
+          <li>
+              <NavLink to="/see-all-car">See All Car</NavLink>
           </li>
           <li>
             <NavLink to="/my-cart">My Cart</NavLink>
