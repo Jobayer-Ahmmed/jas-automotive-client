@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyCarts from "../pages/myCart/MyCarts";
 import URL from "../../url/URL";
 import SeeAllCars from "../pages/seeAllCar/SeeAllCars";
+import BrandCarShow from "../pages/home/brands/BrandCarShow";
 
 
 const routes = createBrowserRouter([
@@ -41,6 +42,10 @@ const routes = createBrowserRouter([
                 path:"/my-cart",
                 element:<MyCarts/>,
             },
+            {
+                path:"/brand-car-show",
+                element:<BrandCarShow/>
+            }
         ]
     }
 ])
