@@ -1,14 +1,16 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { MyContext } from "../../contextApi/MyAuthProvider"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import myAuth from "../../../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
 import { Link } from "react-router-dom";
+import URL from "../../../url/URL";
 
 
 const Register = () => {
     const {createMyUser} = useContext(MyContext)
+    const [message, setMessage]  = useState('')
 
     const handleRegsiter = e=>{
         e.preventDefault()
@@ -18,29 +20,61 @@ const Register = () => {
         const password = form.get("password")
         const name = form.get("name")
         const photo = form.get("photo")
-        console.log(email, password)
+        const data = {email, password}
 
-        createMyUser(email, password)
-        .then((res1)=>{
-            updateProfile(myAuth.currentUser, {
-                displayName: name, 
-                photoURL: photo
+        setMessage('')
+        if(password.length>=6){
+            if(/(?=.*[A-Z])/.test(password)){
+              if(/(?=.*[@#$%^&*!])/.test(password)){
+                createMyUser(email, password)
+                .then(()=>{
+                    updateProfile(myAuth.currentUser, {
+                        displayName: name, 
+                        photoURL: photo
+                        })
+                    .then(() => {
+                        fetch(`${URL}/user`,{
+                            method: "POST",
+                            headers: {"content-type" : "application/json"},
+                            body:JSON.stringify(data)
+                        })
+                        .then(res=>res.json())
+                        .then(()=>{
+                            
+                        })
+                        toast.success("Congratulations! Registration successfull")
+                        forFormReset.reset()
+                      })
+                    .catch(err=>console.log(err))
                 })
-            .then((res2) => {
-                console.log(res1)
-                console.log(res2)
-                toast.success("Congratulations! Registration successfull")
-                forFormReset.reset()
-              })
-            .catch(err=>console.log(err))
-        })
-        .catch(err=>console.log(err))
+                .catch(err=>console.log(err))
+    
+              }
+              else{
+                setMessage("Password must have at least one special character")             
+              }
+    
+            }
+            else{
+              setMessage("Password must have at least one uppercase")          
+            }
+    
+        }
+        else{
+          setMessage("Password must be 6 characters or, more")
+        }
+
+
+
+
+
 
 }
   return (
     <div className="w-4/5 md:w-3/5 mx-auto my-myMargin">
         <div className="bg-textColor py-10 px-4 rounded-lg text-center">
             <h1  className=" text-2xl font-medium my-mtMargin">Registration Now</h1>
+            <h3  className="text-red-500 text-xl my-mtMargin">{message}</h3>
             <form onSubmit={handleRegsiter}>
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Name" name="name" required/><br />
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Email" name="email" required /> <br />

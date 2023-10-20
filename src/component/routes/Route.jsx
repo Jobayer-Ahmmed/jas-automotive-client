@@ -8,7 +8,8 @@ import PrivateRoute from "./PrivateRoute";
 import MyCarts from "../pages/myCart/MyCarts";
 import URL from "../../url/URL";
 import SeeAllCars from "../pages/seeAllCar/SeeAllCars";
-import BrandCarShow from "../pages/home/brands/BrandCarShow";
+import BrandCarsShow from "../pages/home/brands/BrandCarsShow";
+
 
 
 const routes = createBrowserRouter([
@@ -43,8 +44,10 @@ const routes = createBrowserRouter([
                 element:<MyCarts/>,
             },
             {
-                path:"/brand-car-show",
-                element:<BrandCarShow/>
+                path:"/car-show/:brandName",
+                element:<BrandCarsShow/>,
+                loader: async ({params})=> fetch(`${URL}/car-show/${params.brandName}`)
+                
             }
         ]
     }

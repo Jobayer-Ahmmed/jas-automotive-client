@@ -6,9 +6,11 @@ import { useNavigate } from 'react-router-dom';
 const Brand = ({aBrand}) => {
   const {name, logo} = aBrand
   const naviagte = useNavigate()
+  
+
   return (
 
-      <div onClick={()=>naviagte("/brand-car-show")} className="w-full bg-textColor shadow-xl rounded-sm cursor-pointer">
+      <div onClick={()=>naviagte(`/car-show/${name}`)} className="w-full bg-textColor shadow-xl rounded-sm cursor-pointer">
         <figure className="flex justify-center pt-10">
           <img
             src={logo}
