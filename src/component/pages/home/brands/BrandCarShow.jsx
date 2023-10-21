@@ -6,7 +6,7 @@ const BrandCarShow = ({car}) => {
 
 
   // console.log(car)
-  const {name, photo, price, type, description, rating, brand} = car
+  const { _id, name, photo, price, type, description, rating, brand} = car
   return (
     <div className="flex flex-col justify-between  w-full bg-textColor shadow-xl">
     <figure className='w-full h-48'><img className='w-full h-full' src={photo} alt="car-image" /></figure>
@@ -19,8 +19,8 @@ const BrandCarShow = ({car}) => {
       <p className='mt-3'>{description.slice(0,60)} ....</p>    
     </div>
       <div className="card-actions justify-end p-4">
-        <Link to={`/details/${name}`} className="btn btn-primary">See Details</Link>
-        <Link to="" className="btn btn-primary">Update</Link>
+        <Link to={`/details/${_id}`} className="btn btn-primary">See Details</Link>
+        <Link to={`/edit/${_id}`} className="btn btn-primary">Update</Link>
       </div>
   
   </div>

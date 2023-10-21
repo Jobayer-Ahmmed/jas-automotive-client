@@ -10,6 +10,7 @@ import URL from "../../url/URL";
 import SeeAllCars from "../pages/seeAllCar/SeeAllCars";
 import BrandCarsShow from "../pages/home/brands/BrandCarsShow";
 import SeeDetails from "../pages/home/brands/SeeDetails";
+import Update from "../pages/update/Update";
 
 
 
@@ -42,7 +43,8 @@ const routes = createBrowserRouter([
             },
             {
                 path:"/my-cart",
-                element:<MyCarts/>,
+                element:<PrivateRoute><MyCarts/></PrivateRoute>,
+                loader:async ()=> fetch(`${URL}/my-cart`)
             },
             {
                 path:"/car-show/:brandName",
@@ -51,10 +53,15 @@ const routes = createBrowserRouter([
                 
             },
             {
-                path:"/details/:name",
-                element:<SeeDetails/>,
-                loader: async ({params})=> fetch(`${URL}/details/${params.name}`)
+                path:"/details/:carId",
+                element:<PrivateRoute><SeeDetails/></PrivateRoute>,
+                loader: async ({params})=> fetch(`${URL}/details/${params.carId}`)
 
+            },
+            {
+                path:"/edit/:carId",
+                element:<PrivateRoute><Update/></PrivateRoute>,
+                loader: async ({params})=> fetch(`${URL}/edit/${params.carId}`)
             }
         ]
     }

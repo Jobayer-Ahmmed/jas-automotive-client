@@ -1,28 +1,27 @@
-import { useLoaderData, useParams } from "react-router-dom"
-import { getCar, saveCar } from "../../../localstorage/localStorage"
+import {  useLoaderData } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import URL from "../../../../url/URL";
 
 const SeeDetails = () => {
-    const car = useLoaderData()
-    const carNameGet = useParams()
-    const {name:carName} = carNameGet
-    console.log(carName)
+    const carGet = useLoaderData()
+    const { name, photo, price, type, description, rating, brand} = carGet
+    const car = { name, photo, price, type, description, rating, brand}
 
-   
     const handleCart=()=>{
-      const nameArr = getCar()
-      console.log(nameArr)
-      saveCar(carName)
-      if(nameArr.includes(carName)){
-        toast.warn("You have alredy added this car in Your cart")
-      }
-      else{
+      fetch(`${URL}/my-cart`,{
+        method:"POST",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify(car)
+      })
+      .then(res=>res.json())
+      .then((data)=>{
+        console.log(data)
         toast.success("You successfully added this car in you cart!")
-      }
+      })
     }
-    const {name, photo, price, type, description, rating, brand} = car
+
+
   return (
 <div className="px-xPadding pb-xPadding">
 <div className="  w-full bg-textColor">

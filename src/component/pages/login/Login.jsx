@@ -4,17 +4,29 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MyContext } from "../../contextApi/MyAuthProvider";
 
+
 const Login = () => {
-    const { myLogin} = useContext(MyContext)
+    const { myLogin, googleLogin} = useContext(MyContext)
     const [message, setMessage] = useState('')
     const location = useLocation()
     const navigate = useNavigate()
+
+    const handleGoogle=()=>{
+        googleLogin()
+        .then((res)=>{
+          console.log(res)
+          toast.success("You have logged with Google successfully")
+        })
+        .catch(err=>console.log(err.message))
+    }
 
     const handleLogin=(e)=>{
         e.preventDefault()
         const myForm = new FormData(e.currentTarget)
         const email = myForm.get("email")
         const password = myForm.get("password")
+
+
 
         setMessage('')
         myLogin(email, password)
@@ -36,6 +48,7 @@ const Login = () => {
                 <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Add" />
             </form>
             <p  className=" my-mtMargin">Don&apos;t have an account? <Link to="/register" className="underline text-green-600">Register Now!</Link></p>
+            <p className="underline cursor-pointer" onClick={handleGoogle}>Login with Google</p>
         </div>
 
 
