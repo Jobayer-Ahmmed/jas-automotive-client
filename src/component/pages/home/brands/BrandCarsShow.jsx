@@ -7,7 +7,6 @@ import Slider from "./slider/Slider"
 
 const BrandCarsShow = () => {
   const carsData = useLoaderData()
-  console.log(carsData.length)
   let brand
   if(carsData.length){
      brand =  carsData[0].brand
@@ -16,8 +15,6 @@ const BrandCarsShow = () => {
      brand = "Mazda"
   }
 
-    
- console.log(brand)
 
   return (
     <div className=" mb-myMargin">
