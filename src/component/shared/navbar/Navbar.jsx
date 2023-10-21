@@ -46,12 +46,12 @@ const Navbar = () => {
             <li>
               <NavLink to="/my-cart">My Cart</NavLink>
             </li>
-            <li>
+            {/* <li>
               <Link to="/login">Login</Link>
             </li>
             <li>
               <Link to="/register">Register</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         {/* for logo */}

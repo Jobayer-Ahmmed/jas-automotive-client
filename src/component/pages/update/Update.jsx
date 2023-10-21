@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Update = () => {
     const getdata = useLoaderData()
-    const {name, photo, brand, type, rating, price} = getdata
+    const {_id,name, photo, brand, type, rating, price} = getdata
     const handleSubmit=e=>{
         e.preventDefault()
         const form = new FormData(e.currentTarget)
@@ -18,7 +18,7 @@ const Update = () => {
 
         const data = {name, photo, brand, type, rating, price}
         console.log(data)
-        fetch(`${URL}/car`,{
+        fetch(`${URL}/car/${_id}`,{
             method:"PUT",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(data)
@@ -33,7 +33,7 @@ const Update = () => {
   return (
     <div className="w-4/5 md:w-3/5 mx-auto my-myMargin">
         <div className="bg-textColor py-10 px-4 rounded-lg text-center">
-            <h1  className=" text-2xl font-medium my-mtMargin">Add A Car</h1>
+            <h1  className=" text-2xl font-medium my-mtMargin">Update the Car</h1>
             <form onSubmit={handleSubmit}>
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" defaultValue={name} name="name" required/><br />
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" defaultValue={photo} name="photo" required /> <br />

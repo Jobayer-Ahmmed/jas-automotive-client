@@ -25,7 +25,7 @@ const BrandCarsShow = () => {
         {
           carsData.length? '':    
                   <div className="w-[300px] md:w-[500px] lg:w-[900px] mx-auto h-[30vh] bg-textColor text-deepGray text-2xl flex justify-center items-center">
-                    <h3>There is no car of {brand}</h3>
+                    <h3>There is no car of <span className="font-bold">{brand}</span> at now.</h3>
                   </div>
         }
         <div className="flex justify-between px-xPadding">
