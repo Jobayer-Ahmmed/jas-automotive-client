@@ -9,6 +9,7 @@ import MyCarts from "../pages/myCart/MyCarts";
 import URL from "../../url/URL";
 import SeeAllCars from "../pages/seeAllCar/SeeAllCars";
 import BrandCarsShow from "../pages/home/brands/BrandCarsShow";
+import SeeDetails from "../pages/home/brands/SeeDetails";
 
 
 
@@ -48,6 +49,12 @@ const routes = createBrowserRouter([
                 element:<BrandCarsShow/>,
                 loader: async ({params})=> fetch(`${URL}/car-show/${params.brandName}`)
                 
+            },
+            {
+                path:"/details/:name",
+                element:<SeeDetails/>,
+                loader: async ({params})=> fetch(`${URL}/details/${params.name}`)
+
             }
         ]
     }

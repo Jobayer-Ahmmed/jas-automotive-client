@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const BrandCarShow = ({car}) => {
 
-  console.log(car)
+
+  // console.log(car)
   const {name, photo, price, type, description, rating, brand} = car
   return (
     <div className="flex flex-col justify-between  w-full bg-textColor shadow-xl">
@@ -14,10 +16,11 @@ const BrandCarShow = ({car}) => {
       <h2 className="text-lg">Type : {type}</h2>
       <h2 className="text-lg">Rating : {rating}</h2>
       <h2 className="text-lg">Price : {price}</h2>
-      <p className='mt-3'>{description}</p>    
+      <p className='mt-3'>{description.slice(0,60)} ....</p>    
     </div>
       <div className="card-actions justify-end p-4">
-        <button className="btn btn-primary">Buy Now</button>
+        <Link to={`/details/${name}`} className="btn btn-primary">See Details</Link>
+        <Link to="" className="btn btn-primary">Update</Link>
       </div>
   
   </div>

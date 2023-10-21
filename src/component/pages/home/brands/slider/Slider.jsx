@@ -8,18 +8,19 @@ const Slider=()=>{
      {url: "https://i.ibb.co/0DS13Jp/car1.png"},
 
    ];
+   let a= "100%"
+   let b = "95vh"
    return (
-      <div className="">
+      <div>
       <div className="w-full relative">
-
          <SimpleImageSlider
-            width={"100%"}
-            height={"90vh"}
+            width={a}
+            height={b}
             images={sliderImages}
             showBullets={true}
             showNavs={true}
             autoPlay={true}
-            autoPlayDelay={10} // 10 second por por slide hobe
+            autoPlayDelay={3} // 3 second por por slide hobe
          />
       </div>
       </div>

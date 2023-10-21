@@ -13,36 +13,43 @@ https://i.ibb.co/xYxryq5/bmw-logo-removebg-preview.png
 https://i.ibb.co/1JbBdrK/tesla-logo-removebg-preview.png
 https://i.ibb.co/Yh5jj5x/mercedes-logo-removebg-preview.png
 https://i.ibb.co/b75t321/honda-logo-removebg-preview.png
+https://i.ibb.co/LS3X0zV/mazda-logo.png
 
 # toyota
 https://i.ibb.co/R9DT6zx/Toyota-Tundra.png
 https://i.ibb.co/vhJqR6c/toyota-venza.png
 https://i.ibb.co/G3Tvy8h/toyota-crown.png
+https://i.ibb.co/Zzc3rkG/Camry.png
 
 # frod
 https://i.ibb.co/dt3Gx5P/Ford-Bronco.png
 https://i.ibb.co/yWPw5sx/Ford-Mustang-Mach-E.png
 https://i.ibb.co/cxFhJjV/ford-f-150.png
+https://i.ibb.co/rsc8RfZ/Ford-Eco-Sport.png
 
 # BMW
 https://i.ibb.co/QNdttBr/BMW-iX.png
 https://i.ibb.co/ypJ0gcX/BMW-M3.png
 https://i.ibb.co/fSz4ZWy/BMW-Z4.png
+https://i.ibb.co/pjrDjnc/BMW-i4-Gran-Coupe.png
 
 # Mercedes-Benz
 https://i.ibb.co/k6qVdxm/Mercedes-Benz-C-Class.png
 https://i.ibb.co/yVFFspc/Mercedes-Benz-S-Class.png
 https://i.ibb.co/xHtqqvL/Mercedes-Benz-SL.png
+https://i.ibb.co/3WRhp0k/Mercedes-Benz-GLE.png
 
 # Tesla
 https://i.ibb.co/4fYncBC/Tesla-Model-3.png
 https://i.ibb.co/LtxJHff/Tesla-Model-S.png
 https://i.ibb.co/yVyqhNJ/Tesla-Model-Y.png
+https://i.ibb.co/Wz50N3j/Tesla-Model-X.png
 
 # Honda
 https://i.ibb.co/WpMS6M7/Honda-Civic.png
 https://i.ibb.co/TY3GD4Z/Honda-CR-V.png
 https://i.ibb.co/mN0qcN7/Honda-Ridgeline.png
+https://i.ibb.co/jgdNCfS/Honda-Accord.png
 
 # dummy image
 https://i.ibb.co/JyMcKzX/toyata-car1.png

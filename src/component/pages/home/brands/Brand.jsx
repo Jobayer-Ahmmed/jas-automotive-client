@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Brand = ({aBrand}) => {
   const {name, logo} = aBrand
   const naviagte = useNavigate()
+ 
   
 
   return (
