@@ -11,6 +11,7 @@ import SeeAllCars from "../pages/seeAllCar/SeeAllCars";
 import BrandCarsShow from "../pages/home/brands/BrandCarsShow";
 import SeeDetails from "../pages/home/brands/SeeDetails";
 import Update from "../pages/update/Update";
+import ErrorPage from "../pages/errorPage/ErrorPage";
 
 
 
@@ -18,6 +19,7 @@ const routes = createBrowserRouter([
     {
         path:"/",
         element:<Root/>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:"/",
