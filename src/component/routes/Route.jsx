@@ -12,6 +12,7 @@ import BrandCarsShow from "../pages/home/brands/BrandCarsShow";
 import SeeDetails from "../pages/home/brands/SeeDetails";
 import Update from "../pages/update/Update";
 import ErrorPage from "../pages/errorPage/ErrorPage";
+import SpecialCar from "../pages/home/consumer/SpecialCar";
 
 
 
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
                 path:"/",
                 element:<Home/>,
 
+            },
+            {
+                path:"/special-car",
+                element:<SpecialCar/>
             },
             {
                 path:"/login",

@@ -21,11 +21,14 @@ export default {
       },
 
       fontFamily: {
-        
+        amita:"amita"
       }
 
 
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 }

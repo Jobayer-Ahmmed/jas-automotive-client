@@ -8,7 +8,7 @@ const BrandCarShow = ({car}) => {
   // console.log(car)
   const { _id, name, photo, price, type, description, rating, brand} = car
   return (
-    <div className="flex flex-col justify-between  w-full bg-textColor shadow-xl">
+    <div className="flex flex-col justify-between  w-full bg-textColor text-deepGray shadow-xl">
     <figure className='w-full h-48'><img className='w-full h-full' src={photo} alt="car-image" /></figure>
     <div className='p-4'>
       <h2 className="text-lg">Car Name : {name}</h2>

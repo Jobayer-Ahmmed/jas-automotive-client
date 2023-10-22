@@ -2,7 +2,7 @@
 
 const Automotive = () => {
   return (
-    <div className="text-textColor px-xPadding my-myMargin">
+    <div className=" px-xPadding my-myMargin">
         <h1 className=" text-3xl font-bold text-center mb-mtMargin" >Automotive : A New World Technology</h1>
         <div>
           <p>The automotive industry is undergoing a transformative phase driven by 

@@ -3,10 +3,11 @@ import Footer from "../shared/footer/Footer"
 import Navbar from "../shared/navbar/Navbar"
 
 
+
 const Root = () => {
   return (
-    <div className="bg-deepGray">
-    <input type="checkbox" className="toggle" checked />
+    <div>
+
         <Navbar/>
         <Outlet/>
         <Footer/>

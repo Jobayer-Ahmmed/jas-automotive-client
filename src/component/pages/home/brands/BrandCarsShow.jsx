@@ -19,7 +19,7 @@ const BrandCarsShow = () => {
   return (
     <div className=" mb-myMargin">
         <Slider/>
-        <h1 className="text-textColor text-3xl font-bold text-center mt-myMargin mb-mtMargin">
+        <h1 className=" text-3xl font-bold text-center mt-myMargin mb-mtMargin">
                 Automotive cars of {brand} 
         </h1>
         {
