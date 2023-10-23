@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth} from"firebase/auth"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC36piyZE_PZQN8W-xjw3NIpqcujCst4wI",
-  authDomain: "jas-auth-6b26f.firebaseapp.com",
-  projectId: "jas-auth-6b26f",
-  storageBucket: "jas-auth-6b26f.appspot.com",
-  messagingSenderId: "665912777527",
-  appId: "1:665912777527:web:1b79bca5ca5a0a940298b2"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId
 };
 
 
