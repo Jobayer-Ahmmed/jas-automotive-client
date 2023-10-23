@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import myAuth from "../../../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
 import { Link } from "react-router-dom";
+import URL from "../../../url/URL";
 
 
 
@@ -29,7 +30,7 @@ const Register = () => {
         const password = form.get("password")
         const name = form.get("name")
         const photo = form.get("photo")
- 
+        const data = {email}
 
         setMessage('')
         if(password.length>=6){
@@ -42,9 +43,16 @@ const Register = () => {
                         photoURL: photo
                         })
                     .then(() => {
+                      fetch(`${URL}/user`,{
+                        method: "POST",
+                        headers:{"content-type":"application/json"},
+                        body:JSON.stringify(data)
+                      })
+                      .then(res=>res.json())
+                      .then(()=>{
                         toast.success("Congratulations! Registration successfull")
                         forFormReset.reset()
-
+                      })
                       })
                     .catch(err=>console.log(err.message))
                 })
@@ -79,9 +87,9 @@ const Register = () => {
             <form onSubmit={handleRegsiter}>
                 <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Name" name="name" required/><br />
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Email" name="email" required /> <br />
-                <input className="w-4/5 h-10 pl-5 rounded" type="text" placeholder="Password" name="password" required/> <br />
+                <input className="w-4/5 h-10 pl-5 rounded" type="password" placeholder="Password" name="password" required/> <br />
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="URL of Your Photo" name="photo" required/><br/>
-                <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Add" />
+                <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Register" />
             </form>
             <p  className=" my-mtMargin">Already have an account? <Link to="/login" className="underline text-green-600">Login Now!</Link></p>
             <p className="underline cursor-pointer" onClick={handleGoogle}>Login with Google</p>

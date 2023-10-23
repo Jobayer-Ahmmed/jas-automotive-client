@@ -15,15 +15,12 @@ const Brand = ({aBrand}) => {
         <figure className="flex justify-center pt-10">
           <img
             src={logo}
-            alt="Shoes"
+            alt="brand_image"
             className="h-36"
           />
         </figure>
-        <div className="card-body items-center text-center">
+        <div className="card-body items-center text-center text-black">
           <h2 className="card-title">{name}</h2>
-          {/* <div className="card-actions">
-            <button className="btn btn-primary">Buy Now</button>
-          </div> */}
         </div>
       </div>
 

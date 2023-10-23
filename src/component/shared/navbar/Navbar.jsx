@@ -4,10 +4,13 @@ import { useContext } from "react";
 import { MyContext } from "../../contextApi/MyAuthProvider";
 import { useState } from "react";
 import { useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Navbar = () => {
   const { myUser, myLogOut } = useContext(MyContext);
+  const username = myUser?.displayName
   const [theme, setTheme] = useState(localStorage.getItem("theme")? localStorage.getItem("theme"):"light")
   
   const handleToggle=e=>{
@@ -26,7 +29,9 @@ const Navbar = () => {
   
   const handleLogout = () => {
     myLogOut()
-      .then(() => console.log("Logout successful"))
+      .then(() =>{
+        toast.success("You are successfully logout")
+      })
       .catch((err) => console.log(err.message));
   };
   return (
@@ -63,14 +68,10 @@ const Navbar = () => {
               <NavLink to="/see-all-car">See All Car</NavLink>
             </li>
             <li>
-              <NavLink to="/my-cart">My Cart</NavLink>
+            {
+            username && <NavLink to={`/my-cart/${username}`}>My Cart</NavLink>
+            }
             </li>
-            {/* <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li> */}
           </ul>
         </div>
         {/* for logo */}
@@ -92,7 +93,9 @@ const Navbar = () => {
               <NavLink to="/see-all-car">See All Car</NavLink>
           </li>
           <li>
-            <NavLink to="/my-cart">My Cart</NavLink>
+          {
+            username && <NavLink to={`/my-cart/${username}`}>My Cart</NavLink>
+          }
           </li>
         </ul>
       </div>
@@ -146,6 +149,21 @@ const Navbar = () => {
   
 </label>
       </div>
+
+      <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+        />
+
+
     </div>
   );
 };

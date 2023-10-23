@@ -6,7 +6,7 @@ const SeeAllCar = ({car}) => {
   return (
     <div className="flex flex-col justify-between  w-full bg-textColor shadow-xl">
   <figure className='w-full h-48'><img className='w-full h-full' src={photo} alt="car-image" /></figure>
-  <div className='p-4'>
+  <div className='p-4 text-black'>
     <h2 className="text-lg">Car Name : {name}</h2>
     <h2 className="text-lg">Brand : {brand}</h2>
     <h2 className="text-lg">Type : {type}</h2>

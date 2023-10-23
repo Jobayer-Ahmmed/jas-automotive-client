@@ -49,9 +49,9 @@ const routes = createBrowserRouter([
                 loader:async ()=> fetch(`${URL}/car`)
             },
             {
-                path:"/my-cart",
+                path:"/my-cart/:username",
                 element:<PrivateRoute><MyCarts/></PrivateRoute>,
-                loader:async ()=> fetch(`${URL}/my-cart`)
+                loader:async ({params})=> fetch(`${URL}/my-cart/${params.username}`)
             },
             {
                 path:"/car-show/:brandName",

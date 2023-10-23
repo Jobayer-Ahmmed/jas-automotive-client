@@ -2,11 +2,15 @@ import {  useLoaderData } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import URL from "../../../../url/URL";
+import { useContext } from "react";
+import { MyContext } from "../../../contextApi/MyAuthProvider";
 
 const SeeDetails = () => {
+    const { myUser} = useContext(MyContext);
+    const username =  myUser.displayName
     const carGet = useLoaderData()
     const { name, photo, price, type, description, rating, brand} = carGet
-    const car = { name, photo, price, type, description, rating, brand}
+    const car = { username, name, photo, price, type, description, rating, brand,}
 
     const handleCart=()=>{
       fetch(`${URL}/my-cart`,{

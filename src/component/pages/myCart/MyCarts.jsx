@@ -1,15 +1,16 @@
 
 import { useState } from "react"
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData} from "react-router-dom"
 import Swal from 'sweetalert2'
 import URL from "../../../url/URL"
+
 
 
 const MyCarts = () => {
   const myCartsData = useLoaderData()
   const [cars, setCars] = useState(myCartsData)
-  const handleDelete =(deleteId)=>{
 
+  const handleDelete =(deleteId)=>{
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -45,14 +46,15 @@ const MyCarts = () => {
       })
 
   }
+
   return (
-    <div className="px-xPadding my-myMargin">
-      
+    <div className="md:px-xPadding my-myMargin">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">    
       {
-        cars.length? cars.map(car=>{
+        cars.length ? cars.map(car=>{
           return(
-            <div key={car._id}  className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
-            <div className="flex flex-col justify-between  w-full bg-textColor shadow-xl">
+
+            <div key={car._id}  className="flex flex-col justify-between  w-full bg-textColor shadow-xl">
                 <figure className='w-full h-48'><img className='w-full h-full' src={car.photo} alt="car-image" /></figure>
                 <div className='p-4'>
                   <h2 className="text-lg">Car Name : {car.name}</h2>
@@ -65,10 +67,14 @@ const MyCarts = () => {
                   <button onClick={()=>handleDelete(car._id)} className="btn btn-primary">Delete</button>
                 </div>
              </div>
-            </div>
           )
         })
-        : 
+        : ''
+
+      }
+      </div>
+      {
+        cars.length? '':
         <div className="w-[300px] md:w-[500px] lg:w-[900px] mx-auto h-[30vh] bg-textColor text-deepGray text-2xl flex justify-center items-center">
                     <h3>Your cart is empty</h3>
         </div>

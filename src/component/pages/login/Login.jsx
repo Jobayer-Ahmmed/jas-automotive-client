@@ -3,18 +3,24 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MyContext } from "../../contextApi/MyAuthProvider";
-
-
-
+import URL from "../../../url/URL";
+import { useEffect } from "react";
 
 
 const Login = () => {
     const { myLogin, googleLogin} = useContext(MyContext)
     const [message, setMessage] = useState('')
+    const [emails, setEmails] = useState([])
     const location = useLocation()
     const navigate = useNavigate()
 
-
+    useEffect(()=>{
+        fetch(`${URL}/user`)
+        .then(res=>res.json())
+        .then((data)=>{
+            setEmails(data)
+        })
+    },[])
 
     const handleGoogle=()=>{
         googleLogin()
@@ -31,15 +37,23 @@ const Login = () => {
         const email = myForm.get("email")
         const password = myForm.get("password")
 
+        const findEmail = emails.find(emailObj=> emailObj.email===email)
+        const getEmail = findEmail?.email
+
         setMessage('')
 
+        if(getEmail){
             myLogin(email, password)
             .then(()=>{
                 toast.success("Login Successfull")
                 navigate(location?.state ? location?.state: '/')
             })
-            .catch(()=>setMessage("Invalid Email or, password"))
-        
+            .catch(()=>setMessage("Invalid password"))
+        }
+        else{
+            setMessage("Invalid Email")
+        }
+
     }
 
   return (
