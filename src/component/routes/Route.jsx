@@ -48,10 +48,15 @@ const routes = createBrowserRouter([
                 element:<SeeAllCars/>,
                 loader:async ()=> fetch(`${URL}/car`)
             },
-            {
-                path:"/my-cart/:username",
+            // {
+            //     path:"/my-cart/:mail",
+            //     element:<PrivateRoute><MyCarts/></PrivateRoute>,
+            //     loader:async ({params})=> fetch(`${URL}/my-cart/${params.mail}`)
+            // },
+                        {
+                path:"/my-cart",
                 element:<PrivateRoute><MyCarts/></PrivateRoute>,
-                loader:async ({params})=> fetch(`${URL}/my-cart/${params.username}`)
+                // loader:async ({params})=> fetch(`${URL}/my-cart/${params.mail}`)
             },
             {
                 path:"/car-show/:brandName",

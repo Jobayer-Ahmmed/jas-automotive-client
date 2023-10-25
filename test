@@ -1,0 +1,45 @@
+
+import SimpleImageSlider from "react-simple-image-slider";
+import "./slider.css"
+import car1 from "../../../../../assets/carousel/BMW1.png"
+import car2 from "../../../../../assets/carousel/BMW2.png"
+import car3 from "../../../../../assets/carousel/Camry.png"
+import car4 from "../../../../../assets/carousel/Ford.png"
+import car5 from "../../../../../assets/carousel/Tesla.png"
+
+
+const Slider=()=>{
+   const sliderImages = [
+   //   {url: "https://i.ibb.co/NYddJhp/car4.png"},
+   //   {url: "https://i.ibb.co/gwzQMR7/car3.png"},
+   //   {url: "https://i.ibb.co/6Xd3tf1/car2.png"},
+   //   {url: "https://i.ibb.co/0DS13Jp/car1.png"},
+   {url : `${car1}`},
+   {url : `${car2}`},
+   {url : `${car3}`},
+   {url : `${car4}`},
+   {url : `${car5}`},
+
+   ];
+
+   return (
+      <div className="my_slider w-full">
+         <SimpleImageSlider
+            width={"100%"}
+            height={"100%"}
+            images={sliderImages}
+            showBullets={true}
+            showNavs={true}
+            autoPlay={true}
+            autoPlayDelay={3} // 3 second por por slide hobe
+         />
+      </div>
+   );
+}
+export default Slider
+
+
+
+
+
+

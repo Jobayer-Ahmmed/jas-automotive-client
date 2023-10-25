@@ -10,9 +10,25 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
   const { myUser, myLogOut } = useContext(MyContext);
-  const username = myUser?.displayName
-  const [theme, setTheme] = useState(localStorage.getItem("theme")? localStorage.getItem("theme"):"light")
+  const email = myUser?.email
+  console.log(email)
+  const [theme, setTheme] = useState("light")
   
+  const navlinks = <>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/add-product">Add Product</NavLink>
+            </li>
+            <li>
+              <NavLink to="/see-all-car">See All Car</NavLink>
+            </li>
+            <li>
+              <NavLink to={`/my-cart`}>My Cart</NavLink>
+            </li>
+  </>
+
   const handleToggle=e=>{
     if(e.target.checked){
       setTheme("dark")
@@ -58,20 +74,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/add-product">Add Product</NavLink>
-            </li>
-            <li>
-              <NavLink to="/see-all-car">See All Car</NavLink>
-            </li>
-            <li>
-            {
-            username && <NavLink to={`/my-cart/${username}`}>My Cart</NavLink>
-            }
-            </li>
+          {navlinks}
           </ul>
         </div>
         {/* for logo */}
@@ -83,20 +86,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/add-product">Add Product</NavLink>
-          </li>
-          <li>
-              <NavLink to="/see-all-car">See All Car</NavLink>
-          </li>
-          <li>
-          {
-            username && <NavLink to={`/my-cart/${username}`}>My Cart</NavLink>
-          }
-          </li>
+        {navlinks}
         </ul>
       </div>
       <div className="navbar-end">

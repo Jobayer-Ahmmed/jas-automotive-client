@@ -1,14 +1,30 @@
 
 import { useState } from "react"
-import { useLoaderData} from "react-router-dom"
 import Swal from 'sweetalert2'
 import URL from "../../../url/URL"
+import { useContext } from "react"
+import { MyContext } from "../../contextApi/MyAuthProvider"
+import { useEffect } from "react"
 
 
 
 const MyCarts = () => {
-  const myCartsData = useLoaderData()
-  const [cars, setCars] = useState(myCartsData)
+  const { myUser} = useContext(MyContext);
+  const getEmail = myUser?.email
+  console.log(getEmail)
+  const [cars, setCars] = useState([])
+  const [isBoolean, setIsBoolean] = useState(false)
+
+
+  useEffect(()=>{
+    fetch(`${URL}/my-cart/${getEmail}`)
+    .then(res=>res.json())
+    .then(data => {
+      console.log(data)
+      setCars(data)
+      setIsBoolean(true)
+    })
+  },[getEmail])
 
   const handleDelete =(deleteId)=>{
     Swal.fire({
@@ -37,7 +53,7 @@ const MyCarts = () => {
                         'Your file has been deleted.',
                         'success'
                       )
-                      const remaing = cars.filter(d=> d._id != deleteId)
+                      const remaing = cars?.filter(d=> d._id != deleteId)
                       setCars(remaing)
                     }
               }
@@ -74,7 +90,8 @@ const MyCarts = () => {
       }
       </div>
       {
-        cars.length? '':
+        cars.length? '': !isBoolean? <span className="loading loading-bars loading-lg"></span>
+        :
         <div className="w-[300px] md:w-[500px] lg:w-[900px] mx-auto h-[30vh] bg-textColor text-deepGray text-2xl flex justify-center items-center">
                     <h3>Your cart is empty</h3>
         </div>

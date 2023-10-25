@@ -7,10 +7,11 @@ import { MyContext } from "../../../contextApi/MyAuthProvider";
 
 const SeeDetails = () => {
     const { myUser} = useContext(MyContext);
-    const username =  myUser.displayName
+    const email =  myUser.email
     const carGet = useLoaderData()
     const { name, photo, price, type, description, rating, brand} = carGet
-    const car = { username, name, photo, price, type, description, rating, brand,}
+    
+    const car = { email, name, photo, price, type, description, rating, brand,}
 
     const handleCart=()=>{
       fetch(`${URL}/my-cart`,{
