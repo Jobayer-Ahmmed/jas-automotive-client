@@ -19,6 +19,7 @@ const Login = () => {
         .then(res=>res.json())
         .then((data)=>{
             setEmails(data)
+            console.log(data)
         })
     },[])
 
@@ -36,9 +37,11 @@ const Login = () => {
         const myForm = new FormData(e.currentTarget)
         const email = myForm.get("email")
         const password = myForm.get("password")
+ 
 
         const findEmail = emails.find(emailObj=> emailObj.email===email)
         const getEmail = findEmail?.email
+        console.log(getEmail)
 
         setMessage('')
 
@@ -64,6 +67,10 @@ const Login = () => {
             <form onSubmit={handleLogin}>
                 <input className="my-2 w-4/5 h-10 pl-5 rounded" type="text" placeholder="Email" name="email" required /> <br />
                 <input className="w-4/5 h-10 pl-5 rounded" type="password" placeholder="Password" name="password" required/> <br />
+                <select className="my-2 w-4/5 h-10 pl-5 rounded"  name="role">
+                    <option value="user">User</option>    
+                    <option value="admin">Admin</option>    
+                </select><br />
                 <input  className="mt-4 rounded-sm px-16  py-2 text-lg font-bold bg-[#DF6242] text-textColor cursor-pointer active:text-xl" type="submit" value="Login" />
             </form>
             <p  className=" my-mtMargin">Don&apos;t have an account? <Link to="/register" className="underline text-green-600">Register Now!</Link></p>
