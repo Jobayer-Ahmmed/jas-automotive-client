@@ -23,10 +23,6 @@
     Google Authentication:
         Users have the option to log in using their Google account. This feature is integrated into the authentication system
 
-    Admin Panel:
-        Admin functionalities
-        Book and user management
-
     Responsive Design:
         Accessible on various devices
         Desktop, tablet, and mobile support
